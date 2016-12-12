@@ -5,6 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "jest --colors",
+        "test:circleci": "jest",
         "build": "webpack --progress --colors"
     },
     "pre-push": [

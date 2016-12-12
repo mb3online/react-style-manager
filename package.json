@@ -8,7 +8,7 @@
         "build": "webpack --progress --colors"
     },
     "prepush": [
-        "test"
+        "yarn test"
     ],
     "keywords": [],
     "author": "MB3 Technologies Inc",

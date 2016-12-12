@@ -52,11 +52,9 @@ An example of the implementation code for a given `SimpleButton` component:
             return !!this.state.hovered;
         }
 
-        [...]
-
         render() {
-            const { styles } = this.props;
-            const styles = styles.generate();
+            const styleManager = this.props.styles;
+            const styles = styleManager.generate();
 
             <div style={styles.root}>
                 <button style={styles.button}></button>

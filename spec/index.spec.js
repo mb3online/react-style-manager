@@ -4,10 +4,6 @@ import StyleManager from '../src/index';
 
 describe('StyleManager', () => {
     let renderer;
-    const TestComponent = React.createClass({
-        propTypes: { styles: React.PropTypes.object.isRequired },
-        render: () => null,
-    });
 
     beforeEach(() => {
         renderer = ReactTestUtils.createRenderer();
@@ -15,7 +11,7 @@ describe('StyleManager', () => {
 
     it('should contain the `styles` prop', () => {
         // Arrange
-        const Test = StyleManager(TestComponent);
+        const Test = StyleManager(() => null);
 
         // Act
         renderer.render(<Test />);

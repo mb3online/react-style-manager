@@ -4,6 +4,7 @@ import Manager from './style-manager';
 export default Component => class StyleManager extends React.Component {
     constructor(props) {
         super(props);
+
         this.manager = new Manager();
         Object.assign(this, this.manager);
     }
@@ -11,7 +12,7 @@ export default Component => class StyleManager extends React.Component {
     render() {
         return (
             <Component
-                styles={this.manager}
+                styleManager={this.manager}
                 {...this.props}
             />
         );

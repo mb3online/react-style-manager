@@ -11,7 +11,7 @@
     "pre-push": [
         "test"
     ],
-    "keywords": [],
+    "keywords": ["react", "inline styles", "style state management", "react styling", "stateful styling"],
     "author": "MB3 Technologies Inc",
     "contributors": [
         "Eric Adamski <eric.adamski@mb3online.com>",

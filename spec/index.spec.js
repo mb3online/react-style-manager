@@ -9,7 +9,7 @@ describe('StyleManager', () => {
         renderer = ReactTestUtils.createRenderer();
     });
 
-    it('should contain the `styles` prop', () => {
+    it('should contain the `styleManager` prop', () => {
         // Arrange
         const Test = StyleManager(() => null);
 
@@ -18,6 +18,6 @@ describe('StyleManager', () => {
         const wrapper = renderer.getRenderOutput();
 
         // Assert
-        expect(Object.keys(wrapper.props).includes('styles')).toBeTruthy();
+        expect(Object.keys(wrapper.props).includes('styleManager')).toBeTruthy();
     });
 });

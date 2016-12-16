@@ -52,7 +52,7 @@ An example of the implementation code for a given `SimpleButton` component:
         }
 
         render() {
-            const styleManager = this.props.styles;
+            const { styleManager } = this.props.styleManager;
             const styles = styleManager.generate();
 
             <div style={styles.root}>

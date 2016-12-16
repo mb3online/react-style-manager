@@ -6,12 +6,11 @@ A react package to more easily manage the stateful styling of your components.
 
 ## Getting started
 
-1. Run `npm install react-style-manager --save` to install the package in your application.
+1. Run `npm install react-style-manager --save` to install the package.
 
 2. Call the `StyleManager` composite function, passing through your component.
 
 3. Register your styling rules in your components' constructor, defining the conditions and applicable styles for each rule.
-
 
 An example of the implementation code for a given `SimpleButton` component:
 

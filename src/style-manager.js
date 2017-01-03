@@ -16,7 +16,7 @@ export default class StyleManager {
     change(namespace) {
         return Object.assign(this, {
             when: condition => {
-                if (!this._rules.get(namespace)) this._rules = this._rules.set(namespace, List([]));
+                if (!this._rules.get(namespace)) this._rules = this._rules.set(namespace, List());
 
                 return Object.assign(this, {
                     apply: style => {
@@ -33,16 +33,16 @@ export default class StyleManager {
     }
 
     generate() {
-        let _rules = Map();
+        let styles = Map();
 
         this._rules.map((namespace, key) => {
-            _rules = _rules.set(key, Map());
+            styles = styles.set(key, Map());
             namespace.map(rule => {
-                if (rule.when()) _rules = _rules.set(key, _rules.get(key).merge(rule.style));
+                if (rule.when()) styles = styles.set(key, styles.get(key).merge(rule.style));
             });
         });
 
-        return _rules.toJS();
+        return styles.toJS();
     }
 
     _ruleFactory(condition, style) {

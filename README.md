@@ -21,9 +21,9 @@ An example of the implementation code for a given `SimpleButton` component:
         constructor(props) {
             super(props)
 
-            const { styles } = this.props;
+            const { styleManager } = this.props;
 
-            styles
+            styleManager
                 .change('root')
                 .when(this.isDisabled)
                 .apply({
@@ -31,7 +31,7 @@ An example of the implementation code for a given `SimpleButton` component:
                     cursor: 'not-allowed',
                 });
 
-            styles
+            styleManager
                 .change('button')
                 .when(this.isDisabled)
                 .apply({

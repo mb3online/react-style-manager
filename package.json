@@ -1,7 +1,7 @@
 {
     "name": "react-style-manager",
     "version": "0.1.0",
-    "description": "",
+    "description": "A react package to more easily manage the stateful styling of your components.",
     "main": "index.js",
     "scripts": {
         "test": "jest --colors",

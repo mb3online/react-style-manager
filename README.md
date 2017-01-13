@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/mb3online/react-style-manager.svg?style=shield&circle-token=91dc3f3ee64e7396e268b64d2bb70b243e79e73b)](https://circleci.com/gh/mb3online/react-style-manager)
 
-A react package to more easily manage the stateful styling of your components.
+#### A react package to more easily manage the stateful styling of your components.
 
 ## Getting started
 

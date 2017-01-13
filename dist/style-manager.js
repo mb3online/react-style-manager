@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -6,28 +6,29 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _immutable = require('immutable');
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var StyleManager = function () {
     function StyleManager() {
         _classCallCheck(this, StyleManager);
 
-        this.rules = {};
+        this._rules = (0, _immutable.Map)();
     }
 
     _createClass(StyleManager, [{
-        key: "change",
+        key: 'change',
         value: function change(namespace) {
             var _this = this;
 
             return Object.assign(this, {
                 when: function when(condition) {
-                    if (!_this.rules[namespace]) _this.rules[namespace] = [];
+                    if (!_this._rules.get(namespace)) _this._rules = _this._rules.set(namespace, (0, _immutable.List)());
 
                     return Object.assign(_this, {
                         apply: function apply(style) {
-                            _this.rules[namespace].push(_this._ruleFactory(condition, style));
-
+                            _this._rules = _this._rules.set(namespace, _this._rules.get(namespace).push(_this._ruleFactory(condition, style)));
                             delete _this.apply;
 
                             return _this;
@@ -37,30 +38,34 @@ var StyleManager = function () {
             });
         }
     }, {
-        key: "generate",
+        key: 'generate',
         value: function generate() {
-            var _this2 = this;
+            var styles = (0, _immutable.Map)();
 
-            var _rules = {};
-
-            Object.keys(this.rules).map(function (key) {
-                var namespace = _this2.rules[key];
-                _rules[key] = {};
-
+            this._rules.map(function (namespace, key) {
+                styles = styles.set(key, (0, _immutable.Map)());
                 namespace.map(function (rule) {
-                    if (rule.when()) _rules[key] = Object.assign(_rules[key], rule.style);
+                    if (rule.when()) styles = styles.set(key, styles.get(key).merge(rule.style));
                 });
             });
 
-            return _rules;
+            return styles.toJS();
         }
     }, {
-        key: "_ruleFactory",
+        key: '_ruleFactory',
         value: function _ruleFactory(condition, style) {
             return {
                 when: condition,
                 style: style
             };
+        }
+    }, {
+        key: 'rules',
+        get: function get() {
+            return this._rules.toJS();
+        },
+        set: function set(rules) {
+            this._rules = rules;
         }
     }]);
 
@@ -68,4 +73,3 @@ var StyleManager = function () {
 }();
 
 exports.default = StyleManager;
-;

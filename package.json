@@ -1,6 +1,6 @@
 {
     "name": "react-style-manager",
-    "version": "0.1.1",
+    "version": "0.2.0",
     "description": "A react package to more easily manage the stateful styling of your components.",
     "main": "index.js",
     "scripts": {

@@ -1,17 +1,23 @@
 {
     "name": "react-style-manager",
-    "version": "0.1.0",
-    "description": "",
+    "version": "0.2.0",
+    "description": "A react package to more easily manage the stateful styling of your components.",
     "main": "index.js",
     "scripts": {
         "test": "jest --colors",
         "test:circleci": "jest",
-        "build": "webpack --progress --colors"
+        "build": "gulp build"
     },
     "pre-push": [
         "test"
     ],
-    "keywords": ["react", "inline styles", "style state management", "react styling", "stateful styling"],
+    "keywords": [
+        "react",
+        "inline styles",
+        "style state management",
+        "react styling",
+        "stateful styling"
+    ],
     "author": "MB3 Technologies Inc",
     "contributors": [
         "Eric Adamski <eric.adamski@mb3online.com>",
@@ -26,6 +32,11 @@
         ]
     },
     "dependencies": {
+        "immutable": "^3.8.1",
+        "gulp": "^3.9.1",
+        "gulp-babel": "^6.1.2",
+        "gulp-rename": "^1.2.2",
+        "gulp-util": "^3.0.8",
         "react": "15.3.1"
     },
     "devDependencies": {

@@ -1,6 +1,6 @@
 module.exports = {
     entry: './src/index.js',
-    output: { filename: './dist/index.js' },
+    output: { filename: './dist/index.js', 'libraryTarget': 'var' },
     module: {
         loaders: [
             {

@@ -32,7 +32,6 @@
         ]
     },
     "dependencies": {
-        "babel-preset-stage-3": "^6.17.0",
         "gulp": "^3.9.1",
         "gulp-babel": "^6.1.2",
         "gulp-rename": "^1.2.2",

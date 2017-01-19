@@ -91,12 +91,12 @@ module.exports =
 	            key: 'render',
 	            value: function render() {
 	                var _props = this.props,
-	                    child = _props.child,
-	                    rest = _objectWithoutProperties(_props, ['child']);
+	                    childRef = _props.childRef,
+	                    rest = _objectWithoutProperties(_props, ['childRef']);
 
 	                return _react2.default.createElement(Component, _extends({}, rest, {
 	                    styleManager: this.manager,
-	                    ref: child
+	                    ref: childRef
 	                }));
 	            }
 	        }]);

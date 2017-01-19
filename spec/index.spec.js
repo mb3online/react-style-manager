@@ -34,6 +34,7 @@ describe('StyleManager', () => {
 
         // Assert
         expect(wrapper.instance().child instanceof RefTest).toBeTruthy();
+        expect(wrapper.instance().ref() instanceof RefTest).toBeTruthy();
     });
 
     it('should push props through to the child component', () => {

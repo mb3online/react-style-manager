@@ -1,1 +1,3 @@
-'use strict';module.exports = require('./dist');
+'use strict';
+
+module.exports = require('./dist');

@@ -27,14 +27,16 @@ describe('StyleManager', () => {
     it('should contain the ref to the component contained in the composite stylemanager', () => {
         // Arrange
         const Composite = StyleManager(RefTest);
+        let ref = null;
         let wrapper = null;
 
         // Act
-        wrapper = mount(<Composite />);
+        wrapper = mount(<Composite childRef={r => ref = r}/>);
 
         // Assert
-        expect(wrapper.instance().child instanceof RefTest).toBeTruthy();
-        expect(wrapper.instance().ref() instanceof RefTest).toBeTruthy();
+        // expect(wrapper.instance().child instanceof RefTest).toBeTruthy();
+        // expect(wrapper.instance().ref() instanceof RefTest).toBeTruthy();
+        expect(ref instanceof RefTest).toBeTruthy();
     });
 
     it('should push props through to the child component', () => {

@@ -9,19 +9,18 @@ export default Component => class StyleManager extends React.Component {
         Object.assign(this, this.manager);
     }
 
-    ref() {
-        return this.child;
-    }
-
     render() {
-        const render = (
+        const {
+            childRef,
+            ...rest
+        } = this.props;
+
+        return (
             <Component
+                {...rest}
                 styleManager={this.manager}
-                ref={r => this.child = r}
-                {...this.props}
+                ref={childRef}
             />
         );
-
-        return render;
     }
 };

@@ -34,8 +34,6 @@ describe('StyleManager', () => {
         wrapper = mount(<Composite childRef={r => ref = r}/>);
 
         // Assert
-        // expect(wrapper.instance().child instanceof RefTest).toBeTruthy();
-        // expect(wrapper.instance().ref() instanceof RefTest).toBeTruthy();
         expect(ref instanceof RefTest).toBeTruthy();
     });
 
